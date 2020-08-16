@@ -1,0 +1,33 @@
+public class transactions
+{
+public void btn-click(object sender,EventArgs e)
+{
+string connection string;
+Sql connection cnn;
+connection string=@ "Name of server; Initial catalog=Name of db; User id= ; password=";
+cnn=new SqlConnection(Connectionstring);
+cnn.open();
+SqlDataAdapter dataadapter=new SqlDataAdapter;
+string sql1=" ";
+sql1="insert into demotb(pername, transaction values(ammu," "+1000+" ")
+sql2="insert into demotb(pername, transaction values(ammu," "+2000+" ")
+sql3="insert into demotb(pername, transaction values(ammu," "+1000+" ")
+sql4="insert into demotb(pername, transaction values(ammu," "+9000+" ")
+sql5="insert into demotb(pername, transaction values(ammu," "+6000+" ")
+Command=new sqlCommand(sql1,cnn);
+adapter.InsertCommand=new SqlCommand(sql1,cnn);
+adapter.InsertCommand.execute NonQuery();
+SqlCommand command;
+SqlDataReader dataReader;
+string Sql,Output=" ";
+Sql="Select withdrawl totalamount from db";
+Command=new SqlCommand(sql,cnn);
+dataReader=command.executeReader();
+while(dataReader.Read())
+{
+output=output+dataReader.GetValue(0)+"-"+dataReader.GetValue(1)+"-"+dataReader.GetValue(2)+"/n";
+}
+MessageBox.show(output);
+dataReader.close();
+command.Dispose();
+cnn.closer();
